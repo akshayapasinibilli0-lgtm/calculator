@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Ensure proper scaling on mobile and desktop browsers -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minimalist Dark Calculator</title>
+  <!-- Link to the external CSS stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Main Calculator Card -->
+  <main class="calculator">
+
+    <!-- Screen / Display Section -->
+    <div class="display">
+      <!-- Displays the previous number and chosen operator (e.g. "12 +") -->
+      <div class="previous-operand" id="previous-operand"></div>
+      <!-- Displays the active number being typed or the computed result -->
+      <div class="current-operand" id="current-operand">0</div>
+    </div>
+
+    <!-- Buttons Grid: 4 columns x 5 rows -->
+    <div class="buttons-grid">
+      <!-- Row 1: Utility functions & division -->
+      <button class="btn btn-function" data-action="clear">AC</button>
+      <button class="btn btn-function" data-action="delete">DEL</button>
+      <button class="btn btn-function" data-action="percent">%</button>
+      <button class="btn btn-operator" data-operation="÷">÷</button>
+
+      <!-- Row 2: 7, 8, 9 and multiplication -->
+      <button class="btn btn-number" data-number="7">7</button>
+      <button class="btn btn-number" data-number="8">8</button>
+      <button class="btn btn-number" data-number="9">9</button>
+      <button class="btn btn-operator" data-operation="×">×</button>
+
+      <!-- Row 3: 4, 5, 6 and subtraction -->
+      <button class="btn btn-number" data-number="4">4</button>
+      <button class="btn btn-number" data-number="5">5</button>
+      <button class="btn btn-number" data-number="6">6</button>
+      <button class="btn btn-operator" data-operation="−">−</button>
+
+      <!-- Row 4: 1, 2, 3 and addition -->
+      <button class="btn btn-number" data-number="1">1</button>
+      <button class="btn btn-number" data-number="2">2</button>
+      <button class="btn btn-number" data-number="3">3</button>
+      <button class="btn btn-operator" data-operation="+">+</button>
+
+      <!-- Row 5: 0 (spans 2 columns), decimal, and equals -->
+      <button class="btn btn-number btn-zero" data-number="0">0</button>
+      <button class="btn btn-number" data-number=".">.</button>
+      <button class="btn btn-operator btn-equals" data-action="calculate">=</button>
+    </div>
+
+  </main>
+
+  <!-- Link to the external JavaScript file at the end of body -->
+  <script src="scripts.js"></script>
+</body>
+</html>
+

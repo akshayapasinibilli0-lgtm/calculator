@@ -1,0 +1,133 @@
+/* ==========================================================================
+   1. GLOBAL RESET & BASE STYLES
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  /* Center the calculator both horizontally and vertically on screen */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #1e2026, #0e1013);
+  padding: 20px;
+}
+
+/* ==========================================================================
+   2. CALCULATOR CONTAINER
+   ========================================================================== */
+.calculator {
+  width: 100%;
+  max-width: 340px;
+  background-color: #000000;
+  border-radius: 36px;
+  padding: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7),
+              0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+/* ==========================================================================
+   3. DISPLAY SCREEN
+   ========================================================================== */
+.display {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  min-height: 120px;
+  padding: 10px 12px 24px 12px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+/* Small secondary text showing previous operand and operator (e.g., "45 +") */
+.previous-operand {
+  color: #8e8e93;
+  font-size: 1.15rem;
+  font-weight: 400;
+  min-height: 1.4rem;
+}
+
+/* Main primary text showing active typing or answer */
+.current-operand {
+  color: #ffffff;
+  font-size: 3.2rem;
+  font-weight: 300;
+  line-height: 1.1;
+  transition: font-size 0.15s ease;
+}
+
+/* ==========================================================================
+   4. BUTTONS GRID (CSS GRID LAYOUT)
+   ========================================================================== */
+.buttons-grid {
+  display: grid;
+  /* Creates 4 equal columns */
+  grid-template-columns: repeat(4, 1fr);
+  /* Space between buttons */
+  gap: 12px;
+}
+
+/* Base button styles */
+.btn {
+  height: 64px;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 0.15s ease, transform 0.08s ease;
+}
+
+/* Tap/Click feedback animation */
+.btn:hover {
+  filter: brightness(1.25);
+}
+
+.btn:active {
+  transform: scale(0.94);
+  filter: brightness(1.4);
+}
+
+/* ==========================================================================
+   5. BUTTON COLOR SCHEMES (iOS INVENTED AESTHETIC)
+   ========================================================================== */
+
+/* Top Utility Buttons: AC, DEL, % (Light Gray) */
+.btn-function {
+  background-color: #a5a5a5;
+  color: #000000;
+}
+
+/* Number & Decimal Buttons (Dark Charcoal) */
+.btn-number {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+/* Math Operator Buttons: ÷, ×, −, +, = (Vibrant Orange) */
+.btn-operator {
+  background-color: #ff9f0a;
+  color: #ffffff;
+  font-size: 1.7rem;
+}
+
+/* Zero button spans 2 columns to mimic iOS layout */
+.btn-zero {
+  grid-column: span 2;
+  border-radius: 35px;
+  justify-content: flex-start;
+  padding-left: 26px;
+}
+
